@@ -1,0 +1,6 @@
+---
+- name: "unclutter | {{ ansible_distribution }} | Install unclutter"
+  ansible.builtin.apt:
+    name: unclutter
+    state: present
+  become: true

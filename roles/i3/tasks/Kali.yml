@@ -1,0 +1,24 @@
+---
+- name: "i3 | {{ ansible_distribution }} | Install i3"
+  ansible.builtin.apt:
+    name: i3
+    state: present
+  become: true
+
+- name: "i3 | {{ ansible_distribution }} | Install i3-wm"
+  ansible.builtin.apt:
+    name: i3-wm
+    state: present
+  become: true
+
+- name: "i3 | {{ ansible_distribution }} | Install i3blocks"
+  ansible.builtin.apt:
+    name: i3blocks
+    state: present
+  become: true
+
+- name: "i3 | {{ ansible_distribution }} | Install i3status"
+  ansible.builtin.apt:
+    name: i3status
+    state: present
+  become: true

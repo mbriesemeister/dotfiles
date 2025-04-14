@@ -1,0 +1,18 @@
+---
+- name: "nano | Checking for Distribution Config: {{ ansible_distribution }}"
+  ansible.builtin.stat:
+    path: "{{ role_path }}/tasks/{{ ansible_distribution }}.yml"
+  register: nano_distribution_config
+
+- name: "nano | Run Tasks: {{ ansible_distribution }}"
+  ansible.builtin.include_tasks: "{{ ansible_distribution }}.yml"
+  when: nano_distribution_config.stat.exists
+
+
+- name: "nano | Configure nano"
+  ansible.builtin.copy:
+    src: nano
+    dest: "{{ ansible_user_dir }}/.config/"
+    mode: "0644"
+    directory_mode: "0755"
+    force: true

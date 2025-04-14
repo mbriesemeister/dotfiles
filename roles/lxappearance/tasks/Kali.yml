@@ -1,0 +1,6 @@
+---
+- name: "lxappearance | {{ ansible_distribution }} | Install lxappearance"
+  ansible.builtin.apt:
+    name: lxappearance
+    state: present
+  become: true

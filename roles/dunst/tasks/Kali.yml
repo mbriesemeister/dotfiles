@@ -1,0 +1,8 @@
+---
+- name: "dunst | {{ ansible_distribution }} | Install dunst"
+  ansible.builtin.apt:
+    name: dunst
+    state: present
+  become: true
+
+    

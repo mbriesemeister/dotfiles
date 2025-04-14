@@ -1,0 +1,6 @@
+---
+- name: "picom | {{ ansible_distribution }} | Install picom"
+  ansible.builtin.apt:
+    name: picom
+    state: present
+  become: true

@@ -1,0 +1,6 @@
+---
+- name: "xbacklight | {{ ansible_distribution }} | Install xbacklight"
+  ansible.builtin.apt:
+    name: xbacklight
+    state: present
+  become: true

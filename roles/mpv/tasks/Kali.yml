@@ -1,0 +1,6 @@
+---
+- name: "mpv | {{ ansible_distribution }} | Install mpv"
+  ansible.builtin.apt:
+    name: mpv
+    state: present
+  become: true

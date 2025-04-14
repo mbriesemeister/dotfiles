@@ -1,0 +1,17 @@
+---
+- name: "xfce4-terminal | Checking for Distribution Config: {{ ansible_distribution }}"
+  ansible.builtin.stat:
+    path: "{{ role_path }}/tasks/{{ ansible_distribution }}.yml"
+  register: xfce4_terminal_distribution_config
+
+- name: "xfce4-terminal | Run Tasks: {{ ansible_distribution }}"
+  ansible.builtin.include_tasks: "{{ ansible_distribution }}.yml"
+  when: xfce4_terminal_distribution_config.stat.exists
+
+- name: "xfce4-terminal | Configure xfce4-terminal"
+  ansible.builtin.copy:
+    src: xfce4
+    dest: "{{ ansible_user_dir }}/.config/"
+    mode: "0644"
+    directory_mode: "0755"
+    force: true

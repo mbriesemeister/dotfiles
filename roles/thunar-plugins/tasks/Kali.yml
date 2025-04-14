@@ -1,0 +1,12 @@
+---
+- name: "thunar-plugins | {{ ansible_distribution }} | Install thunar-volman"
+  ansible.builtin.apt:
+    name: thunar-volman
+    state: present
+  become: true
+
+- name: "thunar-plugins | {{ ansible_distribution }} | Install thunar-archive-plugin"
+  ansible.builtin.apt:
+    name: thunar-archive-plugin
+    state: present
+  become: true

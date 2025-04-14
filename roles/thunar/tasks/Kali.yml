@@ -1,0 +1,6 @@
+---
+- name: "thunar | {{ ansible_distribution }} | Install thunar"
+  ansible.builtin.apt:
+    name: thunar
+    state: present
+  become: true

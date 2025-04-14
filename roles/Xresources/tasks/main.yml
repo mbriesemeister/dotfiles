@@ -1,0 +1,18 @@
+---
+- name: "Xresources | Checking for Distribution Config: {{ ansible_distribution }}"
+  ansible.builtin.stat:
+    path: "{{ role_path }}/tasks/{{ ansible_distribution }}.yml"
+  register: Xresources_distribution_config
+
+- name: "Xresources | Run Tasks: {{ ansible_distribution }}"
+  ansible.builtin.include_tasks: "{{ ansible_distribution }}.yml"
+  when: Xresources_distribution_config.stat.exists
+
+
+- name: "Xresources | Configure Xresources"
+  ansible.builtin.copy:
+    src: Xresources
+    dest: "{{ ansible_user_dir }}/"
+    mode: "0644"
+    directory_mode: "0755"
+    force: true

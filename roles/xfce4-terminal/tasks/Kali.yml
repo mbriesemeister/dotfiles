@@ -1,0 +1,8 @@
+---
+- name: "xfce4-terminal | {{ ansible_distribution }} | Install xfce4-terminal"
+  ansible.builtin.apt:
+    name: xfce4-terminal
+    state: present
+  become: true
+
+    

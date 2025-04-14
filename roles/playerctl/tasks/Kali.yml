@@ -1,0 +1,6 @@
+---
+- name: "playerctl | {{ ansible_distribution }} | Install playerctl"
+  ansible.builtin.apt:
+    name: playerctl
+    state: present
+  become: true

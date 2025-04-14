@@ -1,0 +1,32 @@
+---
+- name: "alfa-network-adapter | {{ ansible_distribution }} | Install realtek-rtl88xxau-dkms"
+  ansible.builtin.apt:
+    name: realtek-rtl88xxau-dkms
+    state: present
+  become: true
+
+- name: "alfa-network-adapter | {{ ansible_distribution }} | Install dkms"
+  ansible.builtin.apt:
+    name: dkms
+    state: present
+  become: true
+
+- name: "alfa-network-adapter | {{ ansible_distribution }} | Install linux-headers"
+  ansible.builtin.apt:
+    name: linux-headers-$(uname -r)
+    state: present
+  become: true
+
+
+- name: "alfa-network-adapter | {{ ansible_distribution }} | Clone https://github.com/aircrack-ng/rtl8812au"
+  ansible.builtin.git:
+    repo: https://github.com/aircrack-ng/rtl8812au
+    clone: yes
+    dest: ~/
+    
+- name: "alfa-network-adapter | {{ ansible_distribution }} | make rtl8812au"
+  ansible.builtin.command: cd ~/rtl8812au && make
+
+
+
+  

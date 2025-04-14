@@ -1,0 +1,6 @@
+---
+- name: "imagemagick | {{ ansible_distribution }} | Install imagemagick"
+  ansible.builtin.apt:
+    name: imagemagick
+    state: present
+  become: true

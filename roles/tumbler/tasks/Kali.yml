@@ -1,0 +1,6 @@
+---
+- name: "tumbler | {{ ansible_distribution }} | Install tumbler"
+  ansible.builtin.apt:
+    name: tumbler
+    state: present
+  become: true

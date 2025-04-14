@@ -1,0 +1,6 @@
+---
+- name: "lightdm | {{ ansible_distribution }} | Install lightdm"
+  ansible.builtin.apt:
+    name: lightdm
+    state: present
+  become: true

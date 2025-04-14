@@ -1,0 +1,6 @@
+---
+- name: "arandr | {{ ansible_distribution }} | Install arandr"
+  ansible.builtin.apt:
+    name: arandr
+    state: present
+  become: true

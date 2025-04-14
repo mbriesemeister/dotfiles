@@ -1,0 +1,17 @@
+---
+- name: "dunst | Checking for Distribution Config: {{ ansible_distribution }}"
+  ansible.builtin.stat:
+    path: "{{ role_path }}/tasks/{{ ansible_distribution }}.yml"
+  register: dunst_distribution_config
+
+- name: "dunst | Run Tasks: {{ ansible_distribution }}"
+  ansible.builtin.include_tasks: "{{ ansible_distribution }}.yml"
+  when: dunst_distribution_config.stat.exists
+
+- name: "dunst | Configure dunst"
+  ansible.builtin.copy:
+    src: dunst
+    dest: "{{ ansible_user_dir }}/.config/"
+    mode: "0644"
+    directory_mode: "0755"
+    force: true

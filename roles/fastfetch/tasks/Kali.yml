@@ -1,0 +1,6 @@
+---
+- name: "fastfetch | {{ ansible_distribution }} | Install fastfetch"
+  ansible.builtin.apt:
+    name: fastfetch
+    state: present
+  become: true

@@ -1,0 +1,6 @@
+---
+- name: "xorg | {{ ansible_distribution }} | Install xorg"
+  ansible.builtin.apt:
+    name: xorg
+    state: present
+  become: true

@@ -1,0 +1,6 @@
+---
+- name: "nwg-look | {{ ansible_distribution }} | Install nwg-look"
+  ansible.builtin.apt:
+    name: nwg-look
+    state: present
+  become: true

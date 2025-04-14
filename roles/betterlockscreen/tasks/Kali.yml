@@ -1,0 +1,6 @@
+---
+- name: "betterlockscreen | {{ ansible_distribution }} | Install betterlockscreen"
+  ansible.builtin.apt:
+    name: betterlockscreen
+    state: present
+  become: true
