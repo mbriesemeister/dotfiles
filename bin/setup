@@ -333,7 +333,7 @@ esac
 # fi
 
 # pushd "$DOTFILES_DIR" 2>&1 > /dev/null
-update_ansible_galaxy $ID
+##update_ansible_galaxy $ID
 
 ## confirmVaultAccess
 
