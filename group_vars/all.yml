@@ -11,6 +11,7 @@
 
 
 default_roles:
+  - wallpaper
   # - btop
   # - flameshot
   # - feh
@@ -19,7 +20,7 @@ default_roles:
   # - dunst
   # - i3              #(i3, i3-wm, i3blocks, i3status)
   # - alfa-network-adapter 
-   - picom
+  # - picom
   # - xorg
   # - lxappearance
   # - lightdm

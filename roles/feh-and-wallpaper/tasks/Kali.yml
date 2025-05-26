@@ -1,0 +1,9 @@
+---
+- name: "feh | {{ ansible_distribution }} | Install .feh"
+  ansible.builtin.apt:
+    name: feh
+    state: present
+  become: true
+
+
+    
